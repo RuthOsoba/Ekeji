@@ -1,0 +1,69 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790622551476,
+      "tag": "0000_ekeji_core_marketplace",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790624065531,
+      "tag": "0001_sell_flow_photos_delivery",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790624435206,
+      "tag": "0002_orders_and_notifications",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1790628377746,
+      "tag": "0003_messages",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1790629923346,
+      "tag": "0004_reviews",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1790631091508,
+      "tag": "0005_department_womens_mens",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1790714721801,
+      "tag": "0006_seller_only_delivery_updates",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1790797017922,
+      "tag": "0007_realtime_messaging",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1790885492125,
+      "tag": "0008_listing_favourite_counts",
+      "breakpoints": true
+    }
+  ]
+}

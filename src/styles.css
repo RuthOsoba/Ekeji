@@ -1,0 +1,175 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Ekeji design system — luxury editorial fashion resale.
+ * Oxblood, warm ivory, soft beige and muted gold.
+ * All colours are oklch tokens; never hardcode colours in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 3px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-brand: "Playfair Display", Georgia, serif;
+  --font-display: "Newsreader", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-ink: var(--ink);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-editorial: 0 18px 50px -28px oklch(0.26 0.09 17 / 0.35);
+  --shadow-soft: 0 8px 24px -18px oklch(0.26 0.09 17 / 0.4);
+}
+
+:root {
+  --radius: 0.375rem;
+
+  /* warm ivory canvas */
+  --background: oklch(0.963 0.014 85);
+  --foreground: oklch(0.185 0 0);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.185 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.185 0 0);
+
+  /* oxblood */
+  --primary: oklch(0.262 0.088 17);
+  --primary-foreground: oklch(0.975 0.012 85);
+
+  /* soft beige */
+  --secondary: oklch(0.845 0.028 80);
+  --secondary-foreground: oklch(0.262 0.088 17);
+
+  --muted: oklch(0.925 0.018 85);
+  --muted-foreground: oklch(0.45 0.015 60);
+
+  --accent: oklch(0.905 0.024 82);
+  --accent-foreground: oklch(0.262 0.088 17);
+
+  /* muted gold */
+  --gold: oklch(0.678 0.082 78);
+  --gold-foreground: oklch(0.185 0 0);
+
+  --ink: oklch(0.185 0 0);
+
+  --success: oklch(0.503 0.088 160);
+  --success-foreground: oklch(0.98 0.01 160);
+  --destructive: oklch(0.535 0.175 28);
+  --destructive-foreground: oklch(0.98 0.01 28);
+
+  --border: oklch(0.88 0.02 82);
+  --input: oklch(0.86 0.022 82);
+  --ring: oklch(0.678 0.082 78);
+
+  --sidebar: oklch(0.975 0.012 85);
+  --sidebar-foreground: oklch(0.185 0 0);
+  --sidebar-primary: oklch(0.262 0.088 17);
+  --sidebar-primary-foreground: oklch(0.975 0.012 85);
+  --sidebar-accent: oklch(0.905 0.024 82);
+  --sidebar-accent-foreground: oklch(0.262 0.088 17);
+  --sidebar-border: oklch(0.88 0.02 82);
+  --sidebar-ring: oklch(0.678 0.082 78);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  /* Interactive controls show a pointing hand (Tailwind v4 preflight makes buttons default-arrow). */
+  button,
+  [role="button"],
+  [role="combobox"],
+  [role="tab"],
+  [role="menuitem"],
+  [role="option"],
+  [role="checkbox"],
+  [role="radio"],
+  [role="switch"],
+  summary {
+    cursor: pointer;
+  }
+
+  label:has(input:is([type="checkbox"], [type="radio"], [type="file"])) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [role="button"][aria-disabled="true"],
+  [data-disabled] {
+    cursor: not-allowed;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+@utility hairline {
+  border-bottom: 1px solid var(--color-border);
+}
+
+@utility card-editorial {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+}
